@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 from os import system
 import dbus
-# import argparse
-# ps = argparse.ArgumentParser(description='Parses and presents data from Discord\'s data dump')
-# ps.add_argument("sublprefs", type=str, help='Path to Sublime Text\'s preferences file')
-# args = ps.parse_args()
 
 # Sublime Text
 sublfile = "/home/wcs/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
@@ -29,7 +25,13 @@ gtkcycle = False
 gtkpath = "/home/wcs/.config/gtk-3.0/settings.ini"
 
 
+
+
+
+
 ts = "dark"
+
+
 
 # Sublime Text
 sublprefs = open(sublfile, "r+")
