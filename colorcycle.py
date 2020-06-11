@@ -25,7 +25,8 @@ walldict = {0: {"dark": "/home/wcs/Pictures/Wallpapers/darkright.jpg", "light": 
             }
 
 # GTK
-# gtkpath = "/home/wcs/.config/gtk-3.0/settings.ini"
+gtkcycle = False
+gtkpath = "/home/wcs/.config/gtk-3.0/settings.ini"
 
 
 ts = "dark"
@@ -75,18 +76,19 @@ for i in range(0, len(walldict)):
 
 
 # GTK retardation
-# gtkfile = open(gtkpath)
-# gtksettings=gtkfile.read()
-# if "gtk-application-prefer-dark-theme" not in gtksettings:
-#     if ts == "dark":
-#         gtksettings+="\ngtk-application-prefer-dark-theme=1"
-#     else:
-#         gtksettings+="\ngtk-application-prefer-dark-theme=0"
-# else:
-#     if ts == "dark":
-#         gtksettings = gtksettings.replace("gtk-application-prefer-dark-theme=0", "gtk-application-prefer-dark-theme=1")
-#     else:
-#         gtksettings = gtksettings.replace("gtk-application-prefer-dark-theme=1", "gtk-application-prefer-dark-theme=0")
-# gtkfile.seek(0)
-# gtkfile.write(gtksettings)
-# gtkfile.close()
+if gtkcycle:
+    gtkfile = open(gtkpath)
+    gtksettings=gtkfile.read()
+    if "gtk-application-prefer-dark-theme" not in gtksettings:
+        if ts == "dark":
+            gtksettings+="\ngtk-application-prefer-dark-theme=1"
+        else:
+            gtksettings+="\ngtk-application-prefer-dark-theme=0"
+    else:
+        if ts == "dark":
+            gtksettings = gtksettings.replace("gtk-application-prefer-dark-theme=0", "gtk-application-prefer-dark-theme=1")
+        else:
+            gtksettings = gtksettings.replace("gtk-application-prefer-dark-theme=1", "gtk-application-prefer-dark-theme=0")
+    gtkfile.seek(0)
+    gtkfile.write(gtksettings)
+    gtkfile.close()
